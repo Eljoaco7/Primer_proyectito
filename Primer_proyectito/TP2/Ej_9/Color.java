@@ -95,9 +95,44 @@ public class Color {
             }
         }
         // Consultas
-        
+        public int obtenerRojo(){
+            return rojo;
+        }
+        public int obtenerAzul(){
+            return azul;
+        }
+        public int obtenerVerde(){
+            return verde;
+        }
+        public boolean esRojo(){
+            return rojo == 255 && azul == 0 && verde == 0;
+        }
+        public boolean esGris(){
+            return rojo == verde && verde == azul;
+        }
+        public boolean esNegro(){
+            return rojo == 0 && azul == 0 && verde == 0;
+        }
+        public Color complemento(){
+            return new Color(255 - rojo, 255 - verde, 255 - azul);
+        }
+        public boolean equals(Color c){
+            if (c != null){
+                return rojo == c.rojo && azul == c.azul && verde == c.verde;
+             } else {
+                    return false;
+
+            }
+
+        }
+        public Color clone(){
+            return new Color(rojo,azul,verde);
+        }
+        public String toString(){
+            return rojo + "/" + verde + "/" + azul;
+        }
 
 
     }
 
-}
+
