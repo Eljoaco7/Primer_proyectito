@@ -48,6 +48,40 @@ public class Criatura {
         }
         return retorno;
 
+
+    }
+    public boolean dormir(){
+        boolean retorno = false;
+        if(despierto && refugio.ocuparCama()){
+            
+            despierto = false;
+            retorno = true;
+        }
+        return retorno;
+
+    }
+    public boolean despertar(){
+        boolean retorno = false;
+
+    }
+    public boolean caminar(){
+        boolean retorno = false;
+
+    }
+
+    // Consultas
+
+    public int obtenerEnergia(){
+        return energia;
+    }
+    public int obtenerCaminatas(){
+        return caminatas;
+    }
+    public int obtenerHumor(){
+        return humor;
+    }
+    public  Refugio obtenerRefugio(){
+        return 
     }
 
     
