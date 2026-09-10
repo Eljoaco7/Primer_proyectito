@@ -62,12 +62,33 @@ public class Criatura {
     }
     public boolean despertar(){
         boolean retorno = false;
+        if (!despierto)
+            despierto = true;
+            refugio.desocuparCama();
+            caminatas = 0;
+            retorno = true;
+        return retorno;
+
 
     }
     public boolean caminar(){
-        boolean retorno = false;
-
+    boolean retorno = false;
+    if (despierto && energia >= consumoEnergia && caminatas < 3){
+        energia = energia - consumoEnergia;
+        caminatas++;
+        retorno = true;
+    } else if (despierto && caminatas >= 3) {
+        if (refugio.ocuparCama()) {
+            despierto = false;
+        } else {              // si no hay camas
+            energia = minEnergia;
+        }
+        retorno = true;
     }
+    return retorno;
+}
+
+
 
     // Consultas
 
