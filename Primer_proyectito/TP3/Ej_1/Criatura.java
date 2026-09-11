@@ -17,10 +17,10 @@ public class Criatura {
     // Constructor
 
     public Criatura(Refugio r){
-        Criatura c = new Criatura(r);
-         c.energia = maxEnergia;
-         c.caminatas = 0;
-         c.despierto = true;
+         refugio = r;
+         energia = maxEnergia;
+         caminatas = 0;
+         despierto = true;
 
     }
     // Comandos
@@ -99,10 +99,33 @@ public class Criatura {
         return caminatas;
     }
     public int obtenerHumor(){
+        int humor = 1;
+        if (refugio.esHabitable()==false){    // se que es redundante pero queria cumplir la consigna
+            humor = 1;
+        }
+        else if (energia >= 0 && energia <= 40)
+            humor = 1;
+        else if (energia > 40 && energia <= 70)
+            humor = 2;
+        else
+            humor = 3;
         return humor;
     }
+    
     public  Refugio obtenerRefugio(){
-        return 
+        return refugio;
+    }
+    
+    public boolean estaDormido(){
+        return !despierto;
+    }
+
+    public boolean mayorEnergia(Criatura c){
+        return energia > c.obtenerEnergia();
+    }
+
+    public String toString(){
+        return "Energia: " + energia + " / " + "Caminatas: " + caminatas + " / " + "Despierto: " + despierto + " / " + "Humor: " + obtenerHumor(); 
     }
 
     
