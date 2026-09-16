@@ -19,7 +19,7 @@ public class Jugador {
     public void establecerPosicion(int n){
         posicion = n;
     }
-    public void estableceGolesConvertidos(int n){
+    public void establecerGolesConvertidos(int n){
         golesConvertidos = n;
     }
     public void establecerPartidosJugados(int n){

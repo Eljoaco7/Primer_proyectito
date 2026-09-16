@@ -4,14 +4,14 @@ public class TesterJugador {
     public static void main(String[] args) {
         Jugador messi = new Jugador("Messi");
         messi.establecerNroCamiseta(10);
-        messi.estableceGolesConvertidos(920);
+        messi.establecerGolesConvertidos(920);
         messi.establecerPosicion(9);
         messi.establecerPartidosJugados(1000);
 
         Jugador julianalvarez = new Jugador("Julian Alvarez");
         julianalvarez.establecerNroCamiseta(9);
         julianalvarez.establecerPosicion(9);
-        julianalvarez.estableceGolesConvertidos(154);
+        julianalvarez.establecerGolesConvertidos(154);
         julianalvarez.establecerPartidosJugados(330);
         
         System.out.println(" <<MESSI>> ");

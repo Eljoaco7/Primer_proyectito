@@ -50,12 +50,12 @@ public class Equipo {
     }
 
     public void aumentarGFavor(int total, int delCap){
-        gFavor++;
+        gFavor += total;
         if(delCap > 0)
             capitan.aumentarGoles(delCap);
     }
     public void aumentarGContra(int total){
-        gContra++;
+        gContra += total;
     }
 
     // Consultas
@@ -130,7 +130,7 @@ public class Equipo {
         return retorno; 
         }
 
-        public boolean equals(Equipo e) {
+       /*  public boolean equals(Equipo e) {
         boolean retorno = false;
         // requiere e ligado
         if (nombre.equals(e.obtenerNombre())
@@ -139,15 +139,39 @@ public class Equipo {
                 && pE == e.obtenerPE()
                 && pP == e.obtenerPP()
                 && gFavor == e.obtenerGFavor()
-                && gContra == e.obtenerGContra()) {
+                && gContra == e.obtenerGContra()) { 
             retorno = true;
         }
-        return retorno;
+        return retorno; 
+        } */
+       public boolean equals(Equipo e) {
 
-          
+        return capitan.equals(e.obtenerCapitan()) 
+         
+        && nombre.equals(e.obtenerNombre()) 
+        && gFavor == e.obtenerGFavor()
+        && gContra == e.obtenerGContra() 
+        && pG == e.obtenerPG() 
+        && pP == e.obtenerPP() 
+        && pE == e.obtenerPE();
+    }
 
+    /* public boolean equals(Equipo e) {
 
-        }
+        boolean VF = false;
+
+            if(e != null)
+                VF = (capitan == e.obtenerCapitan() 
+            && gFavor == e.obtenerGFavor() 
+            && nombre == e.obtenerNombre() 
+            && gContra == e.obtenerGContra() 
+            && pG == e.obtenerPG() 
+            && pP == e.obtenerPP() 
+            && pE == e.obtenerPE());
+        
+        return VF; 
+
+    } */
         
         
 
