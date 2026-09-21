@@ -1,4 +1,4 @@
-package Primer_proyectito.TP3.Ej_8;
+package Primer_proyectito.TP3.Ej_9;
 
 public class TesterVehiculo {
     public static void main(String[] args) {
@@ -62,35 +62,35 @@ public class TesterVehiculo {
         System.out.println("obtenerT60 (esperado 300): " + t.obtenerT60());
         System.out.println("obtenerTFija (esperado 500): " + t.obtenerTFija());
 
-        // ---- Pruebas de Vehiculo ----
+                // ---- Pruebas de Vehiculo ----
         System.out.println("\n--- Vehiculo ---");
 
         Vehiculo v1 = new Vehiculo(new Hora(9, 0), 5, "ABC123");
-        System.out.println("obteneraCobrar sin egreso (esperado 0): " + v1.obteneraCobrar(t));
+        System.out.println("aCobrar sin egresar (esperado 0): " + v1.obteneraCobrar());
 
-        v1.egresaVehiculo(new Hora(9, 10));
-        System.out.println("obteneraCobrar con 10 min, <=15 (esperado 100): " + v1.obteneraCobrar(t));
+        v1.egresaVehiculo(new Hora(9, 10), t);
+        System.out.println("aCobrar con 10 min, <=15 (esperado 100): " + v1.obteneraCobrar());
 
         Vehiculo v2 = new Vehiculo(new Hora(9, 0), 6, "DEF456");
-        v2.egresaVehiculo(new Hora(9, 25));
-        System.out.println("obteneraCobrar con 25 min, <=30 (esperado 200): " + v2.obteneraCobrar(t));
+        v2.egresaVehiculo(new Hora(9, 25), t);
+        System.out.println("aCobrar con 25 min, <=30 (esperado 200): " + v2.obteneraCobrar());
 
         Vehiculo v3 = new Vehiculo(new Hora(9, 0), 7, "GHI789");
-        v3.egresaVehiculo(new Hora(9, 50));
-        System.out.println("obteneraCobrar con 50 min, <=60 (esperado 300): " + v3.obteneraCobrar(t));
+        v3.egresaVehiculo(new Hora(9, 50), t);
+        System.out.println("aCobrar con 50 min, <=60 (esperado 300): " + v3.obteneraCobrar());
 
         Vehiculo v4 = new Vehiculo(new Hora(9, 0), 8, "JKL012");
-        v4.egresaVehiculo(new Hora(10, 30));
-        System.out.println("obteneraCobrar con 90 min, >60 (esperado 500): " + v4.obteneraCobrar(t));
+        v4.egresaVehiculo(new Hora(10, 30), t);
+        System.out.println("aCobrar con 90 min, >60 (esperado 500): " + v4.obteneraCobrar());
 
         // equals
         Vehiculo v5 = new Vehiculo(new Hora(9, 0), 5, "ZZZ999");
-        v5.egresaVehiculo(new Hora(9, 10));
-        System.out.println("v1 equals v5, mismos ingreso/egreso/numero, distinta patente (esperado true si patente es ==): "
+        v5.egresaVehiculo(new Hora(9, 10), t);
+        System.out.println("v1 equals v5, mismos ingreso/aCobrar/numero, distinta patente (esperado true si patente es ==): "
                 + v1.equals(v5));
 
         Vehiculo v6 = new Vehiculo(new Hora(9, 0), 99, "ABC123");
-        v6.egresaVehiculo(new Hora(9, 10));
+        v6.egresaVehiculo(new Hora(9, 10), t);
         System.out.println("v1 equals v6, distinto numero (esperado false): " + v1.equals(v6));
 
         // anterior
@@ -102,14 +102,15 @@ public class TesterVehiculo {
 
         // copy
         Vehiculo v8 = new Vehiculo(new Hora(0, 0), 0, "");
-        v8.egresaVehiculo(new Hora(0, 0));
+        v8.egresaVehiculo(new Hora(0, 0), t);
         v8.copy(v4);
         System.out.println("v8 tras copy de v4 -> ingreso hor (esperado 9): " + v8.obtenerIngreso().obtenerHora());
-        System.out.println("v8 tras copy de v4 -> egreso hor (esperado 10): " + v8.obtenerEgreso().obtenerHora());
+        System.out.println("v8 tras copy de v4 -> aCobrar (esperado 500): " + v8.obteneraCobrar());
         System.out.println("v8 tras copy de v4 -> numero (esperado 8): " + v8.obtenerNumero());
         System.out.println("v8 tras copy de v4 -> patente (esperado JKL012): " + v8.obtenerPatente());
     }
 }
+
     
     
     
