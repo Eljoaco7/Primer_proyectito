@@ -1,4 +1,4 @@
-package EJEMPLOSCLASE.EstacionMeteor;
+package Primer_proyectito.EJEMPLOSCLASE.EstacionMeteor;
 
 public class TempMinEstacion {
     private float[] tmin;

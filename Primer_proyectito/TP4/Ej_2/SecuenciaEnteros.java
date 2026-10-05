@@ -129,4 +129,9 @@ public boolean equals(SecuenciaEnteros a){
 return retorno;
 
 }
+
+public String m(int i) {
+    
+    throw new UnsupportedOperationException("Unimplemented method 'm'");
+}
 }

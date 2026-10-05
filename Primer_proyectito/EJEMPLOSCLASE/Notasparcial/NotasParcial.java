@@ -1,4 +1,4 @@
-package EJEMPLOSCLASE.Notasparcial;
+package Primer_proyectito.EJEMPLOSCLASE.Notasparcial;
 
 public class NotasParcial {
     private int[] notas;

@@ -64,3 +64,5 @@ public class TesterVehiculo {
 
                 // ---- Pruebas de Vehiculo ----
         System.out.println("\n--- Vehiculo ---");
+
+    }}
