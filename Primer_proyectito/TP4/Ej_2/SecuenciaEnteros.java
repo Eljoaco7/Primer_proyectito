@@ -4,13 +4,12 @@ public class SecuenciaEnteros {
 
     // Atributos de instancia
 
-    private int[] sec;
+    private int [] sec;
 
     // Constructor
 
     public SecuenciaEnteros(int cant){
         sec = new int[cant];
-
     }
 
     // Comandos
@@ -20,118 +19,122 @@ public class SecuenciaEnteros {
     }
 
     public void reemplazar(int n1, int n2){
-        for(int i = 0; i < sec.length; i++){
+        for(int i = 0; i < cantElementos(); i++){
             if(sec[i] == n1){
                 sec[i] = n2;
             }
         }
     }
 
-    public void reemplazar(int n) {
-    boolean encontrada = false;
-    int primera = 0;
-    int ultima = 0;
-    for (int i = 0; i < sec.length; i++) {
-        if (sec[i] == n) {
-            if (!encontrada) {
-                primera = i;         // solo la primera vez que aparece
-                encontrada = true;
+    public void reemplazar(int n){
+        boolean encontre = false;
+        int PrimeraN = 0;
+        int UltimaN = 0;
+        for(int i = 0; i < cantElementos() && !encontre; i++){
+            if(sec[i] == n){
+                if(!encontre){
+                    PrimeraN = i;
+                    encontre = true;
+                }
+
+                UltimaN = i;
+
+        }
+    }
+    if(encontre){
+        sec[PrimeraN] = 0;
+        sec[UltimaN] = 0;
+    }
+
+}
+    public boolean copy(SecuenciaEnteros a){
+       boolean retorno = false;
+        if(a!=null && a.cantElementos() == cantElementos())
+          retorno = true;
+        for(int i = 0; i < cantElementos() && retorno; i++){
+            sec[i] =  a.sec[i];
+        }
+        return retorno;
+    }
+
+    public boolean intercambiar(int p1, int p2){
+        int p1aux = 0;
+        boolean retorno = false;
+        if(0 <= p1 && p1 < cantElementos() && 0 <= p2 && p2 < cantElementos()){
+            p1aux = sec[p1];
+            sec[p1] = sec[p2];
+            sec[p2] = p1aux;
+            retorno = true;
+        }
+        return retorno;
+    }
+  
+
+    public int obtenerEntero(int p){
+        return sec[p];
+    }
+
+   
+    public int cantElementos(){
+        return sec.length;
+    }
+
+    public int total(){
+        int suma = 0;
+        for(int i = 0; i < cantElementos(); i++){
+            suma = suma + sec[i];
+        }
+        return suma;
+    }
+
+    public boolean estaNum(int n){
+        boolean esta = false;
+        for(int i = 0; i < cantElementos() && !esta; i++){
+            if(sec[i] == n){
+                esta = true;
             }
-            ultima = i;              // se pisa en cada aparición
         }
+        return esta;
+    }
 
-        if(encontrada){
-            sec[primera] = 0;
-            sec[ultima] = 0;
+    public int cantidadMayores(int n){
+        int cont = 0;
+
+        for(int i = 0; i < cantElementos(); i++){
+            if(sec[i] == n){
+                cont++;
+            }
         }
+        return cont;
+    }
+
+    public boolean mitadMayores(int n){
+        return cantidadMayores(n) >= cantElementos()/2.0;
+    }
+
+    public boolean equals(SecuenciaEnteros a){
+        boolean retorno = (cantElementos() ==  a.cantElementos());
+
+        for(int i = 0; i < cantElementos() && retorno; i++){
+            if(sec[i] != a.sec[i]){
+                retorno = false;
+            }
+        }
+        return retorno;
+    }
+
+    public SecuenciaEnteros clone(){
+        SecuenciaEnteros clon = new SecuenciaEnteros(cantElementos());
+
+        for (int i = 0; i < cantElementos(); i++){
+            clon.sec[i] = sec[i];
+        }
+        return clon;
+    }
+        
+
     
-    }
- }
-  public boolean intercambiar(int p1, int p2){
-    boolean retorno = false;
-     if (0 <= p1 && p1 < sec.length && 0 <= p2 && p2 < sec.length){
-        int p1aux= sec[p1];
-        sec[p1] = sec[p2];
-        sec[p2] = p1aux;
-        retorno = true;
-     }
-     return retorno;
-  }
-
-  public boolean copy(SecuenciaEnteros a){
-    boolean retorno = false;
-    if(a != null && a.cantElementos() == sec.length){
-        retorno = true;
-        for(int i = 0; i < sec.length; i++){
-            sec[i] = a.sec[i];
-        }
-    }
-    return  retorno;
-
-  }
-
-  // Consultas
-
-  public int obtenerEntero(int p){
-    return sec[p];
-  }
-
-  public int cantElementos(){
-    return sec.length;
-  }
-
-  public int total(){
-    int suma = 0;
-
-    for(int i = 0; i < sec.length; i++){
-        suma = suma + sec[i];
-
-    }
-    return suma;
-  }
-
-  public boolean estaNum(int n){
-    
-    boolean encontre = false;
-    for(int i = 0; i < sec.length && !encontre; i++){
-        if(sec[i] == n){
-            encontre = true;
-        }
-    }
-    return encontre;
-  }
-
-  public int cantidadMayores(int n){
-    int mayores = 0;
-    for(int i = 0; i < sec.length; i++){
-        if(sec[i] > n){
-            mayores++;
-        }
-
-  }
-  return mayores;
-
 }
 
-public boolean mitadMayores(int n){
-
-    return cantidadMayores(n) >= sec.length / 2.0;
-
-}
-
-public boolean equals(SecuenciaEnteros a){
-    boolean retorno = a != null && a.cantElementos() == sec.length;
-    for(int i = 0; i < sec.length && retorno; i++){ 
-        retorno = sec[i] == a.sec[i];
-    }
 
 
-return retorno;
-
-}
-
-public String m(int i) {
-    
-    throw new UnsupportedOperationException("Unimplemented method 'm'");
-}
-}

@@ -11,12 +11,10 @@ public class EstacionMeteorologica {
 
     // Constructor
 
-     // Requiere s ligado y cod > 0 entonces yo no lo reviso
     public EstacionMeteorologica(int cod, Sensor s){
+        activa = true;
         codigo = cod;
         sensor = s;
-        activa = true;
-
     }
 
     // Comandos
@@ -61,40 +59,28 @@ public class EstacionMeteorologica {
 
     public EstacionMeteorologica clone(){
         EstacionMeteorologica clon = new EstacionMeteorologica(codigo, sensor);
-        if(!activa){
+         if(!activa){
             clon.desactivar();
         }
         return clon;
     }
 
     public boolean equals(EstacionMeteorologica e){
-        boolean iguales = false;
-        if(e!=null){
-            iguales = codigo == e.obtenerCodigo()
-            && activa == e.estaActiva()
-            && sensor.equals(e.obtenerSensor());
-        }
-
-        return iguales;
+        return codigo == e.obtenerCodigo()
+        && activa == e.estaActiva()
+        && sensor.equals(e.obtenerSensor());
     }
-    
-    
-    
-    public EstacionMeteorologica estacionMasCalida(EstacionMeteorologica e){
-        EstacionMeteorologica retorno = this;
 
+    public EstacionMeteorologica estacionMasCalida(EstacionMeteorologica e){
+       EstacionMeteorologica retorno = this; 
         if(e.obtenerSensor().obtenerTemperatura() > sensor.obtenerTemperatura()){
             retorno = e;
-        }
-        else if(e.obtenerSensor().obtenerTemperatura() == sensor.obtenerTemperatura()){
+        } else if (e.obtenerSensor().obtenerTemperatura() == sensor.obtenerTemperatura()){
             if(e.obtenerSensor().obtenerHumedad() > sensor.obtenerHumedad()){
                 retorno = e;
             }
-            
-                
         }
         return retorno;
     }
-
 
 }

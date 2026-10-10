@@ -26,10 +26,8 @@ public class Borde {
     }
 
     public void copy(Borde b){
-        if (b != null){
-            grosor = b.grosor;
-            color = b.color;
-        }
+        grosor = b.obtenerGrosor();
+        color = b.obtenerColor();
     }
 
     // Consultas
@@ -43,22 +41,17 @@ public class Borde {
     }
 
     public Borde clone(){
-        return new Borde(grosor, color);
+        Borde clon = new Borde(grosor, color);
+        return clon;
     }
 
     public boolean equals(Borde b){
-        boolean retorno = false;
-        
-         if (grosor == b.grosor && color == b.color){
-            retorno = true;
-         }
-         return retorno;
+        return grosor == b.obtenerGrosor()
+        && color == b.obtenerColor();
     }
 
     public String toString(){
         
         return "Borde[grosor=" + grosor + ", color=" + color + "]";
     }
-
-    
 }
