@@ -27,7 +27,24 @@ public class GrillaReales {
             }
         }
     }
-    
-    
-    
+
+    public boolean intercambiarFilas(int f1, int f2){
+    boolean retorno = false;
+
+    if(0 <= f1 && 0 <= f2 && f1 < cantFilas() && f2 < cantFilas()){
+        retorno = true;
+        for(int j = 0; j < cantColumnas(); j++){
+            float aux = grilla[f1][j];
+            grilla[f1][j] = grilla[f2][j];
+            grilla[f2][j] = aux;
+        }
+    }
+    return retorno;
+  }
+
+
+   
+
+
+
 }

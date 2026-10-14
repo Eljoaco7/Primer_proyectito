@@ -4,7 +4,7 @@ public class ColeccionCiudadesOrd {
 
     // Atributos de instancia
 
-    private Ciudad [][] ciudades;
+    private Ciudad [] ciudades;
     private int cant;
 
     // Constructor
@@ -24,18 +24,18 @@ public class ColeccionCiudadesOrd {
     }
 
     // Servicio util para la implementacion de arriba:
-    /*private int posInsert(Ciudad c){            // este es un intento mio de hacerlo con el boolean, no esta completo
-        int pos = 0;
-        boolean encontre = false;
+    /*private int posInsert(Ciudad c){                  // Ahora si esta completo pero con boolean
+    int pos = cant;
+    boolean encontre = false;
 
-        for(int i = 0; i < cantCiudades() && !encontre; i++){
-            if(ciudades[i].mayor(c)){
-                encontre = true;
-                pos = i;
-            }
+    for(int i = 0; i < cant && !encontre; i++){
+        if(ciudades[i].mayor(c)){
+            encontre = true;
+            pos = i;
         }
-        
-    }*/
+    }
+    return pos;
+   }*/
 
 
     private int posInsert(Ciudad c){            
@@ -61,7 +61,7 @@ public class ColeccionCiudadesOrd {
     public void eliminar(Ciudad c){
         int pos = buscarCiudad(c);
         if(pos != -1){
-            arrastraAnt(pos);
+            arrastrarAnt(pos);
             cant--;
         }
     }
@@ -93,7 +93,9 @@ public class ColeccionCiudadesOrd {
 
     // Consultas
 
-    public int cantCiudades(){}
+    public int cantCiudades(){
+        return cant;
+    }
 
     // ................
     
