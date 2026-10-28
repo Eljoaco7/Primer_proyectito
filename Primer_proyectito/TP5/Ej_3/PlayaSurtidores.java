@@ -1,6 +1,6 @@
-package Primer_proyectito.TP5.Ej_3;
+package TP5.Ej_3;
 
-import Ej_3.Surtidor;
+import TP2.Ej_3.Surtidor;
 
 public class PlayaSurtidores {
     // Atributos de instancia

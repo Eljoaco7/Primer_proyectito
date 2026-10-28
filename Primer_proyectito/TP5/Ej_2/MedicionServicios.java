@@ -1,4 +1,4 @@
-package Primer_proyectito.TP5.Ej_2;
+package TP5.Ej_2;
 
 public class MedicionServicios {
     // Atributos de instancia

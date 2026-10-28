@@ -1,4 +1,4 @@
-package Ej_9;
+package TP2. Ej_9;
 
 public class ColorTester {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package Primer_proyectito.TP3.Ej_1;
+package TP3.Ej_1;
 
-import Ej_4.Refugio;
+import TP2.Ej_4.Refugio;
 
 public class TesterCriatura {
     public static void main(String[] args) {

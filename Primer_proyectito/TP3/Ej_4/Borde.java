@@ -1,6 +1,6 @@
-package Primer_proyectito.TP3.Ej_4;
+package TP3.Ej_4;
 
-import Ej_9.Color;
+import TP2.Ej_9.Color;
 
 public class Borde {
     // Atributos de instancia

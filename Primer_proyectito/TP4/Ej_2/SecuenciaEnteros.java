@@ -1,4 +1,4 @@
-package Primer_proyectito.TP4.Ej_2;
+package TP4.Ej_2;
 
 public class SecuenciaEnteros {
 

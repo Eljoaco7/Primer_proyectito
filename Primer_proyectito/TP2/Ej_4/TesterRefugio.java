@@ -1,4 +1,4 @@
-package Ej_4;
+package TP2. Ej_4;
 
 import java.util.Scanner;
 

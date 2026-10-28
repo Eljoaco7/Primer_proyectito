@@ -1,5 +1,5 @@
-package Primer_proyectito.TP4.Ej_4;
-import Ej_5.Sensor;
+package TP4.Ej_4;
+import TP2.Ej_5.Sensor;
 
 
 public class FilaSensores {

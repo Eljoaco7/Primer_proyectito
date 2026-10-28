@@ -1,4 +1,4 @@
-package Primer_proyectito.TP6.Ej_2;
+package TP6.Ej_2;
 
 public class tester {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Ej_10;
+package TP2. Ej_10;
 
 public class Jugador {
     // Atributos de instancia

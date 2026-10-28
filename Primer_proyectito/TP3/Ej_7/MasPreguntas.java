@@ -1,4 +1,4 @@
-package Primer_proyectito.TP3.Ej_7;
+package TP3.Ej_7;
 
 public class MasPreguntas {
 /*a. Una clase A está asociada a la clase B si tiene uno o más atributos de la clase B.

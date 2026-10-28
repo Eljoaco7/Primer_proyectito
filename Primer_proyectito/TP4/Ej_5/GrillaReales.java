@@ -1,4 +1,4 @@
-package Primer_proyectito.TP4.Ej_5;
+package TP4.Ej_5;
 
 public class GrillaReales {
 

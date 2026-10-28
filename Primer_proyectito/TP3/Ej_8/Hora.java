@@ -1,4 +1,4 @@
-package Primer_proyectito.TP3.Ej_8;
+package TP3.Ej_8;
 
 public class Hora {
     // Atributos de instancia

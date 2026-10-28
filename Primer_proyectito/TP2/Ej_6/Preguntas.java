@@ -1,4 +1,4 @@
-package Ej_6;
+package TP2. Ej_6;
 
 public class Preguntas {
     /*-EJERCICIO 6. Analice si las siguientes afirmaciones son correctas:

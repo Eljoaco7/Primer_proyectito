@@ -1,4 +1,4 @@
-package Ej_10;
+package TP2. Ej_10;
 
 public class TesterJugador {
     public static void main(String[] args) {

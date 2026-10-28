@@ -1,6 +1,6 @@
-package Primer_proyectito.TP5.Ej_1;
+package TP5.Ej_1;
 
-import Ej_10.Jugador;
+import TP2.Ej_10.Jugador;
 
 public class Historicos {
     

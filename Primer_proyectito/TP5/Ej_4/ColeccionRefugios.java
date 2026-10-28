@@ -1,6 +1,6 @@
-package Primer_proyectito.TP5.Ej_4;
+package TP5.Ej_4;
 
-import Ej_4.Refugio;
+import TP2.Ej_4.Refugio;
 
 public class ColeccionRefugios {
     

@@ -1,6 +1,6 @@
-package Primer_proyectito.TP3.Ej_6;
+package TP3.Ej_6;
 
-import Ej_10.Jugador;
+import TP2.Ej_10.Jugador;
  
 
 public class Equipo {

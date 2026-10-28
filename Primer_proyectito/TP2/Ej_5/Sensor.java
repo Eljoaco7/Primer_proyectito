@@ -1,4 +1,4 @@
-package Ej_5;
+package TP2. Ej_5;
 
 
 public class Sensor {

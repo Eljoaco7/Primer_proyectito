@@ -1,6 +1,6 @@
-package Primer_proyectito.TP3.Ej_3;
+package TP3.Ej_3;
 
-import Ej_8.Fecha;
+import TP2.Ej_8.Fecha;
 
 public class Prestamo {
     // atributos de instancia

@@ -1,4 +1,4 @@
-package Primer_proyectito.TP4.Ej_3;
+package TP4.Ej_3;
 
 public class Oracion {
     // Atributos de instancia

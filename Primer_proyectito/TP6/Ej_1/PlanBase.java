@@ -1,4 +1,4 @@
-package Primer_proyectito.TP6.Ej_1;
+package TP6.Ej_1;
 
 public class PlanBase {
     

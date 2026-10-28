@@ -1,4 +1,4 @@
-package Ej_3;
+package TP2. Ej_3;
 
 public class Surtidor {
     // atributos de clase

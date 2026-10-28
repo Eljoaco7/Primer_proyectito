@@ -1,4 +1,4 @@
-package Primer_proyectito.TP4.Ej_1;
+package TP4.Ej_1;
 
 public class Conceptos {
    /* a) Encapsular es agrupar datos y operaciones en una clase y ocultar la

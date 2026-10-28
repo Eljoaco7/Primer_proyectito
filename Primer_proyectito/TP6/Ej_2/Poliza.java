@@ -1,4 +1,4 @@
-package Primer_proyectito.TP6.Ej_2;
+package TP6.Ej_2;
 
 public class Poliza {
     // atributos de instancia
