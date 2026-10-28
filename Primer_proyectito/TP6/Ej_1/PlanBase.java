@@ -1,4 +1,4 @@
-package Primer_proyectito.TP6;
+package Primer_proyectito.TP6.Ej_1;
 
 public class PlanBase {
     
@@ -23,4 +23,10 @@ public class PlanBase {
     public int obtenerBase(){
         return base;
     }
+
+    public int costoPlan(){
+        return base*2 + usuarios*10;
+    }
+
+
 }

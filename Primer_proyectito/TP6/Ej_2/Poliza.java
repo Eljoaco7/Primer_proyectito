@@ -1,7 +1,9 @@
+package Primer_proyectito.TP6.Ej_2;
+
 public class Poliza {
     // atributos de instancia
-    private int nroPoliza;
-    private double incendio,robo;
+    private  int nroPoliza;
+    private float incendio,robo;
     private boolean activa;
 
     // constructor
@@ -12,7 +14,7 @@ public class Poliza {
     robo = 0;
     activa = true;
 }
-    public Poliza(int np, double i, double r){
+    public Poliza(int np, float i, float r){
     nroPoliza = np;
     incendio = i;
     robo = r;
@@ -30,13 +32,13 @@ public class Poliza {
         activa = false;
     }
 
-    public void establecerIncendio(double m){
+    public void establecerIncendio(float m){
         incendio = m;
     }
-    public void establecerRobo(double m){
+    public void establecerRobo(float m){
         robo = m;
     }
-    public void actualizarPorcentaje(double p){
+    public void actualizarPorcentaje(float p){
         if (activa == true){
             incendio = incendio + (incendio * p / 100);
             robo = robo + (robo * p / 100);
@@ -48,10 +50,10 @@ public class Poliza {
     public int obtenerNroPoliza(){
         return nroPoliza;
     }
-    public double obtenerIncendio(){
+    public float obtenerIncendio(){
         return incendio;
     }
-    public double obtenerRobo(){
+    public float obtenerRobo(){
         return robo;
     }
     public double obtenerCostoPoliza(){
@@ -60,13 +62,5 @@ public class Poliza {
     public boolean estaActiva(){
         return activa;
     }
-
-
-
-
-
-
- 
-
-    
 }
+

@@ -5,7 +5,7 @@ public class Refugio {
     private static final int capacidadAlacena = 20;
     private static final int cantidadCamas = 10;
     // Atributos de instancia
-    private int alimentos,bebidas,camas;
+    protected int alimentos,bebidas,camas;
     // Constructor
     public Refugio (int a, int b, int c){
         if(a + b > capacidadAlacena){
