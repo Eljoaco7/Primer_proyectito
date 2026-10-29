@@ -1,3 +1,5 @@
+package PrimerParcialPracticaYo;
+
 public class PulseraFitness {
 
     // Atributos de clase

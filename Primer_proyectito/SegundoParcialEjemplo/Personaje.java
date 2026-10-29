@@ -1,3 +1,5 @@
+package SegundoParcialEjemplo;
+
 public abstract class Personaje {
     protected int salud;
     protected int fuerza;

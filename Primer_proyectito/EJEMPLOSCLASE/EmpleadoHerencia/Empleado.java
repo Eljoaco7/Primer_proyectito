@@ -1,6 +1,6 @@
-package Primer_proyectito.EJEMPLOSCLASE.EmpleadoHerencia;
+package EJEMPLOSCLASE.EmpleadoHerencia;
 
-import Ej_8.Fecha;
+import TP2.Ej_8.Fecha;
 
 public class Empleado {
 

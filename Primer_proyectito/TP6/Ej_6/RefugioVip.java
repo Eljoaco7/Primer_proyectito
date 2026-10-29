@@ -1,6 +1,6 @@
-package Primer_proyectito.TP6.Ej_6;
+package TP6.Ej_6;
 
-import Ej_4.Refugio;
+import TP2.Ej_4.Refugio;
 
 public class RefugioVip extends Refugio {
     

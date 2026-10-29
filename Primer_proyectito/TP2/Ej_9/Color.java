@@ -88,9 +88,9 @@ public class Color {
         }
         public void copy(Color c){
             if (c != null){
-                rojo = c.rojo;
-                azul = c.azul;
-                verde = c.verde;
+                rojo = c.obtenerRojo();
+                azul = c.obtenerAzul();
+                verde = c.obtenerVerde();
 
             }
         }

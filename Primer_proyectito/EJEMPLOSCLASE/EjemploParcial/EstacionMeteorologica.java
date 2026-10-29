@@ -1,4 +1,4 @@
-package Primer_proyectito.EJEMPLOSCLASE.EjemploParcial;
+package EJEMPLOSCLASE.EjemploParcial;
 
 public class EstacionMeteorologica{
     //Atriutos de instancia

@@ -1,4 +1,4 @@
-package Primer_proyectito.EJEMPLOSCLASE.MatrizPuntos;
+package EJEMPLOSCLASE.MatrizPuntos;
 
 
 

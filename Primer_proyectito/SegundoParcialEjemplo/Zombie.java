@@ -1,3 +1,4 @@
+package SegundoParcialEjemplo;
 public class Zombie extends Personaje{
     protected int velocidad;
     protected boolean casco;

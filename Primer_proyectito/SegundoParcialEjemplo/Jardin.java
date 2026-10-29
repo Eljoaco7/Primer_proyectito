@@ -1,3 +1,5 @@
+package SegundoParcialEjemplo;
+
 public class Jardin {
     private static final int cantFilas = 5;
     private Personaje [][] g;

@@ -1,4 +1,4 @@
-package Primer_proyectito.EJEMPLOSCLASE.Ciudad;
+package EJEMPLOSCLASE.Ciudad;
 
 public class ColeccionCiudadesOrd {
 

@@ -1,3 +1,5 @@
+package PrimerParcialPracticaYo;
+
 public class TesterPulseraFitness{
     public static void main (String[]args){
         PulseraFitness pf = new PulseraFitness(7);

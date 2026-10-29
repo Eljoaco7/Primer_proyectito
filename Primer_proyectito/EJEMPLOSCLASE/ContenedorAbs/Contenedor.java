@@ -1,4 +1,4 @@
-package Primer_proyectito.EJEMPLOSCLASE.ContenedorAbs;
+package EJEMPLOSCLASE.ContenedorAbs;
 
 abstract class Contenedor {
 

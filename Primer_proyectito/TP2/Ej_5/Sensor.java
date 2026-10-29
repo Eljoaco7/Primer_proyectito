@@ -3,10 +3,10 @@ package TP2. Ej_5;
 
 public class Sensor {
     // Atributos de clase
-    private static final double max = 0.01;
+    protected  static final double max = 0.01;
 
     // Atributos de instancia
-    private double p1,p2;
+    protected double p1,p2;
 
     // Constructor
     public Sensor(double p1,double p2){

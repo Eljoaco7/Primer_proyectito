@@ -1,6 +1,6 @@
+package PrimerParcialPracticaYo;
 
-
-import Primer_proyectito.EJEMPLOSCLASE.EjemploParcial.Sensor;
+import EJEMPLOSCLASE.EjemploParcial.Sensor;
 
 public class EstacionMeteorologica {
     // Atributos de instancia

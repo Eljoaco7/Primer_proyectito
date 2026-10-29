@@ -1,4 +1,4 @@
-package Primer_proyectito.EJEMPLOSCLASE.MatrizPuntos;
+package EJEMPLOSCLASE.MatrizPuntos;
 
 public class MatrizPuntos {
   //Atributo de instancia

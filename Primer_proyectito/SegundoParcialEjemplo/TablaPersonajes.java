@@ -1,3 +1,4 @@
+package SegundoParcialEjemplo;
 public class TablaPersonajes {
     private Personaje [] t;
 
