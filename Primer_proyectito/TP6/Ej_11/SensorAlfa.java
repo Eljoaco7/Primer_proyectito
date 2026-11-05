@@ -60,10 +60,20 @@ public class SensorAlfa extends Sensor {
          ig = false;
         else {
          SensorAlfa r = (SensorAlfa) e;
-         ig = super.equals(e) && p3 == r.obtenerP3();
+         ig = super.equals(e) && p3 == r.obtenerP3() && p4 == r.obtenerP4();
         }
         return ig;
     }
+
+    public void copy(SensorAlfa s){
+        if(s != null){
+            super.copy(s);
+            p3 = s.obtenerP3();
+            p4 = s.obtenerP4();
+        }
+    }
+
+
 
     
 }

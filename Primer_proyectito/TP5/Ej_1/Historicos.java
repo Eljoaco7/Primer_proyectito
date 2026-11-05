@@ -6,8 +6,8 @@ public class Historicos {
     
     // Atributos de instancia
 
-    private Jugador [] jugadoresHistoricos;
-    private int cant; // Sólo las primeras cant posiciones están ligadas
+    protected Jugador [] jugadoresHistoricos;
+    protected int cant;
 
     // Constructor
 
@@ -18,7 +18,6 @@ public class Historicos {
 
     // Comandos
 
-    //Requiere que la colección no esté llena y j ligada
     public void establecerJugador(Jugador j){
         jugadoresHistoricos[cant] = j;
         cant++;
@@ -36,12 +35,12 @@ public class Historicos {
             }
         }
     }
-}
+  }
 
     // Consultas
-    
+
     public boolean estaLlena(){
-        return cant == jugadoresHistoricos.length;
+        return cant == cantPosiciones();
     }
 
     public int cantPosiciones(){
@@ -56,47 +55,54 @@ public class Historicos {
         return jugadoresHistoricos[p];
     }
 
-    public boolean mMayores(int g, int m){
-        boolean cumple = false;
-        int cont = 0;
+    public boolean mMayores(int g, int m) {
+    boolean cumple = false;
+    int cont = 0;
 
-        for(int i = 0; i < cant; i++){
-            if(jugadoresHistoricos[i].obtenerGolesConvertidos() > g)
-            cont++;
+    if (cant >= m) {
+        // Recorre mientras queden elementos y cont no supere m
+        for (int i = 0; i < cant && cont <= m; i++) {
+            if (jugadoresHistoricos[i].obtenerGolesConvertidos() > g) {
+                cont++;
+            }
         }
-
-        if(cont == m){
+        
+        // Verifica si la cantidad fue EXACTAMENTE m
+        if (cont == m) {
             cumple = true;
         }
-
-        return cumple;
     }
+
+    return cumple;
+}
 
     public boolean alMenosMMayores(int g, int m){
         boolean cumple = false;
         int cont = 0;
 
-        for(int i = 0; i < cant && cont < m; i++){
-            if(jugadoresHistoricos[i].obtenerGolesConvertidos() > g)
-            cont++;
-        }
-
-        if(cont == m){
-            cumple = true;
+        for(int i = 0; i < cant && !cumple; i++){
+            if(jugadoresHistoricos[i].obtenerGolesConvertidos() > g){
+                cont++;
+            }
+            if(cont >= m){
+                cumple = true;
+            }
         }
 
         return cumple;
     }
 
-    public Historicos goleadores(int g) {
-        Historicos resultado = new Historicos(cantPosiciones());
-        for (int i = 0; i < cant; i++) {
-            Jugador j = jugadoresHistoricos[i];
-            if (j.obtenerGolesConvertidos() > g) {
-                resultado.establecerJugador(j);
+    public Historicos goleadores(int g){
+        Historicos h = new Historicos(cantPosiciones());
+        for(int i = 0; i < cant; i++){
+            if(jugadoresHistoricos[i].obtenerGolesConvertidos() > g){
+                h.establecerJugador(jugadoresHistoricos[i]);
             }
         }
-        return resultado;
+
+        return h;
     }
+
+
 }
 

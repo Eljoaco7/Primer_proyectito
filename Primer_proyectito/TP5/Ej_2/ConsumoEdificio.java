@@ -3,49 +3,46 @@ package TP5.Ej_2;
 public class ConsumoEdificio {
     // Atributos de instancia
 
-    private MedicionServicios[] consumoXPiso;
+    protected MedicionServicios [] consumoXPiso;
 
     // Constructor
 
     public ConsumoEdificio(int pisos){
-        consumoXPiso = new MedicionServicios [pisos];
+        consumoXPiso = new MedicionServicios[pisos];
     }
 
     // Comandos
 
-    private boolean pisoValido(int p){
-        boolean retorno = false;
-        if(p >= 1 && p <= consumoXPiso.length){
-            retorno = true;
-        }
-        return retorno;
-    }
-    
     public boolean registrarConsumo(MedicionServicios m, int p){
-        boolean retorno = false;
-        if(pisoValido(p)){
+        boolean toRet = false;
+        if(p >= 1 && p <= cantPosiciones()){
             consumoXPiso[p - 1] = m;
-            retorno = true;
+            toRet = true;
         }
-        return  retorno;
+
+        return toRet;
     }
 
     public boolean eliminarConsumo(int p){
-        boolean retorno = false;
-        if(pisoValido(p)){
+        boolean toRet = false;
+        if(p >= 1 && p <= cantPosiciones()){
             consumoXPiso[p - 1] = null;
-            retorno = true;
+            toRet = true;
         }
-        return retorno;
+        return toRet;
     }
 
     public void eliminarCeros(){
-        for(int i = 0; i < consumoXPiso.length; i++){
+
+        for(int i = 0; i < cantPosiciones(); i++){
             if(consumoXPiso[i] != null){
                 int ceros = 0;
-                if(consumoXPiso[i].obtenerGas() == 0) ceros ++;
-                if(consumoXPiso[i].obtenerAgua() == 0) ceros ++;
-                if(consumoXPiso[i].obtenerElectricidad() == 0) ceros ++;
+                if(consumoXPiso[i].obtenerAgua() == 0) 
+                    ceros++;
+                if(consumoXPiso[i].obtenerGas() == 0) 
+                    ceros++;
+                if(consumoXPiso[i].obtenerElectricidad() == 0) 
+                    ceros++;
                 if(ceros >= 2)
                     consumoXPiso[i] = null;
                 
@@ -67,7 +64,6 @@ public class ConsumoEdificio {
                 cont++;
             }
         }
-
         return cont;
     }
 
@@ -76,69 +72,69 @@ public class ConsumoEdificio {
     }
 
     public boolean hayMayorConsumo(int c){
-        boolean retorno = false;
-        for(int i = 0; i < cantPosiciones() && !retorno; i++){
+        boolean fueMayor = false;
+
+        for(int i = 0; i < cantPosiciones() && !fueMayor; i++){
             if(consumoXPiso[i] != null && consumoXPiso[i].costoServicios() > c){
-                retorno = true;
+                fueMayor = true;
             }
         }
-
-        return retorno;
+        return fueMayor;
     }
 
     public int cuantasMayores(int c){
-        int cont = 0;
+        int contC = 0;
+
         for(int i = 0; i < cantPosiciones(); i++){
             if(consumoXPiso[i] != null && consumoXPiso[i].costoServicios() > c){
-                cont++;
+                contC++;
             }
         }
-        return cont;
+        return contC;
     }
 
     public int primerPisoMayor(int c){
-        int mayor = -1;
-        boolean encontre = false;
+        boolean encontrePrimerMayor = false;
+        int primerMayor = -1;
 
-        for(int i = 0; i < cantPosiciones() && !encontre; i++){
+        for(int i = 0; i < cantPosiciones() && !encontrePrimerMayor; i++){
             if(consumoXPiso[i] != null && consumoXPiso[i].costoServicios() > c){
-                mayor = i + 1;
-                encontre = true;
+                encontrePrimerMayor = true;
+                primerMayor = i + 1;
             }
         }
-
-        return mayor;
+        return primerMayor;
     }
 
     public int ultimoPisoMayor(int c){
-        int mayor = -1;
         boolean encontre = false;
+        int ultimoMayor = -1;
 
         for(int i = cantPosiciones() - 1; i >= 0 && !encontre; i--){
             if(consumoXPiso[i] != null && consumoXPiso[i].costoServicios() > c){
-                mayor = i + 1;
                 encontre = true;
+                ultimoMayor = i + 1;
             }
         }
-
-        return mayor;
+        return ultimoMayor;
     }
 
     public boolean nMayores(int c, int n){
         boolean hay = false;
         int cont = 0;
-       if(cantPosiciones() >= n){
-        for(int i = 0; i < cantPosiciones() && !hay; i++){
-            if(consumoXPiso[i] != null && consumoXPiso[i].costoServicios() > c){
-                cont++;
-            }
-            if(cont >= n){
-                hay = true;
+
+        if(cantPosiciones() >= n){
+            for(int i = 0; i < cantPosiciones() && !hay; i++){
+                if(consumoXPiso[i] != null && consumoXPiso[i].costoServicios() > c){
+                    cont++;
+                }
+                if(cont >= n){
+                    hay = true;
+                }
             }
         }
+        return hay;
     }
-    return hay;
-}
 
     public boolean todosMayores(int c){
         boolean todoSonMayores = true;
@@ -151,6 +147,11 @@ public class ConsumoEdificio {
 
         return todoSonMayores;
     }
+    
+    /*public boolean todosMayores(int c){
+        int cont = cuantasMayores(c);
+        return cont == c;
+    }*/
 
     public boolean todosMayores(MedicionServicios m){
         boolean todos = true;
@@ -169,21 +170,6 @@ public class ConsumoEdificio {
 
         return todos;
     }
-
-    // OTRA VERSION DE LO MISMO DE ARRIBA
-    /*public boolean todosMayores(MedicionServicios m) {
-        boolean todos = true;
-        for (int i = 0; i < consumoXPiso.length && todos; i++) {
-            MedicionServicios actual = consumoXPiso[i];
-            if (actual != null) {
-                todos = actual.obtenerGas() > m.obtenerGas()
-                     && actual.obtenerAgua() > m.obtenerAgua()
-                     && actual.obtenerElectricidad() > m.obtenerElectricidad();
-            }
-        }
-        return todos;
-    }
-} */
 
 
 }
